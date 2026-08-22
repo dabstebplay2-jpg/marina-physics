@@ -1,0 +1,178 @@
+@media (prefers-reduced-motion: no-preference) {
+  .motion-ready .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity .72s cubic-bezier(.22, 1, .36, 1),
+      transform .72s cubic-bezier(.22, 1, .36, 1);
+  }
+
+  .reveal[data-reveal-delay="1"] { transition-delay: .08s; }
+  .reveal[data-reveal-delay="2"] { transition-delay: .16s; }
+  .reveal[data-reveal-delay="3"] { transition-delay: .24s; }
+  .reveal[data-reveal-delay="4"] { transition-delay: .32s; }
+
+  .motion-ready .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .portrait-shell img {
+    animation: portrait-in 1.05s cubic-bezier(.22, 1, .36, 1) both;
+  }
+
+  .particle-one { animation: drift-one 7s ease-in-out infinite; }
+  .particle-two { animation: drift-two 9s ease-in-out infinite; }
+  .particle-three { animation: drift-one 11s ease-in-out infinite reverse; }
+
+  .status-dot {
+    animation: pulse-dot 2.4s ease-in-out infinite;
+  }
+
+  .satellite {
+    animation: satellite-float 4s ease-in-out infinite;
+  }
+
+  .bolt {
+    animation: electric-glow 2s ease-in-out infinite;
+  }
+
+  .car-visual .motion-line {
+    animation: motion-lines 2.2s ease-in-out infinite;
+  }
+
+  .formula,
+  .section-formula-field span,
+  .experience-formulas span,
+  .cta-atmosphere span {
+    animation: formula-float 12s ease-in-out infinite;
+  }
+
+  .formula:nth-child(even),
+  .section-formula-field span:nth-child(even),
+  .experience-formulas span:nth-child(even),
+  .cta-atmosphere span:nth-child(even) {
+    animation-name: formula-float-reverse;
+    animation-duration: 15s;
+  }
+
+  .section-formula-field span:nth-child(3n),
+  .cta-atmosphere span:nth-child(3n) {
+    animation-delay: -6s;
+  }
+
+  .heat-wave { animation: heat-rise 2.8s ease-in-out infinite; }
+  .heat-wave-two { animation-delay: -.9s; }
+  .heat-wave-three { animation-delay: -1.8s; }
+  .quantum-dot { animation: quantum-pulse 2.6s ease-in-out infinite; }
+  .quantum-dot-two { animation-delay: -1.3s; }
+  .force-arrow { animation: force-push 2.4s ease-in-out infinite; }
+
+  .formula-track {
+    animation: formula-marquee 48s linear infinite;
+  }
+
+  .formula-stream-two .formula-track {
+    animation-duration: 62s;
+    animation-delay: -21s;
+  }
+
+  .formula-stream-three .formula-track {
+    animation-duration: 54s;
+    animation-delay: -9s;
+  }
+
+  .formula-stream-four .formula-track {
+    animation-duration: 70s;
+    animation-delay: -34s;
+  }
+
+  .formula-stream-five .formula-track {
+    animation-duration: 58s;
+    animation-delay: -18s;
+  }
+}
+
+@keyframes portrait-in {
+  from { transform: scale(1.045); filter: saturate(.8); }
+  to { transform: scale(1); filter: saturate(1); }
+}
+
+@keyframes drift-one {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(12px, -16px); }
+}
+
+@keyframes drift-two {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-18px, 12px); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 5px rgba(22, 163, 74, .12); }
+  50% { box-shadow: 0 0 0 9px rgba(22, 163, 74, .04); }
+}
+
+@keyframes satellite-float {
+  0%, 100% { transform: rotate(16deg) translate(0, 0); }
+  50% { transform: rotate(16deg) translate(-6px, -4px); }
+}
+
+@keyframes electric-glow {
+  0%, 100% { opacity: .72; filter: drop-shadow(0 0 0 transparent); }
+  50% { opacity: 1; filter: drop-shadow(0 0 10px rgba(37, 99, 235, .35)); }
+}
+
+@keyframes motion-lines {
+  0%, 100% { transform: translateX(0); opacity: .5; }
+  50% { transform: translateX(-10px); opacity: 1; }
+}
+
+@keyframes formula-float {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: .65; }
+  50% { transform: translate3d(14px, -18px, 0); opacity: 1; }
+}
+
+@keyframes formula-float-reverse {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: .7; }
+  50% { transform: translate3d(-16px, 13px, 0); opacity: 1; }
+}
+
+@keyframes heat-rise {
+  0%, 100% { transform: translateY(0); opacity: .4; }
+  50% { transform: translateY(-14px); opacity: .85; }
+}
+
+@keyframes quantum-pulse {
+  0%, 100% { transform: scale(.85); opacity: .65; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+@keyframes force-push {
+  0%, 100% { transform: translate(0, -55%); }
+  50% { transform: translate(10px, -55%); }
+}
+
+@keyframes formula-marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@media (max-width: 680px) and (prefers-reduced-motion: no-preference) {
+  .formula-stream-one .formula-track { animation-duration: 72s; }
+  .formula-stream-two .formula-track { animation-duration: 88s; }
+  .formula-stream-three .formula-track { animation-duration: 80s; }
+  .formula-stream-four .formula-track { animation-duration: 96s; }
+  .formula-stream-five .formula-track { animation-duration: 84s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
