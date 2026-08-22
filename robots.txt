@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dabstebplay2-jpg.github.io/marina-physics/sitemap.xml
